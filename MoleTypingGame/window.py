@@ -9,15 +9,17 @@ class Window(QWidget):
         self.initUI()
 
     def initUI(self):
-
         #GRID
         grid = QGridLayout()
-        labels = ['']*25
-        positions = [(i,j) for i in range(5) for j in range(5)]
+        self.labels = [[x for x in range(5)], [x for x in range(5)], [x for x in range(5)], [x for x in range(5)],
+                  [x for x in range(5)]]
 
-        for position, label in zip(positions, labels):
-            label = QLabel('🍎')
-            grid.addWidget(label, *position)
+        for i in range(5):
+            for j in range(5):
+                self.labels[i][j] = QLabel('a')
+                grid.addWidget(self.labels[i][j],i,j)
+        self.labels[0][0].setText("asd")
+
 
         # 컨트롤 레이아웃 박스
         self.vbox = QVBoxLayout()
