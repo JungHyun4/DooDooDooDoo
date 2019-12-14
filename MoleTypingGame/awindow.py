@@ -14,6 +14,7 @@ class Window(QWidget):
 
 
     def initUI(self):
+<<<<<<< HEAD
 
         # GRID
         grid = QGridLayout()
@@ -26,6 +27,19 @@ class Window(QWidget):
                 grid.addWidget(self.labels[i][j], i, j)
 
         self.labels[0][0].setText("asd")
+=======
+        #GRID
+        grid = QGridLayout()
+        self.labels = [[x for x in range(5)], [x for x in range(5)], [x for x in range(5)], [x for x in range(5)],
+                  [x for x in range(5)]]
+
+        for i in range(5):
+            for j in range(5):
+                self.labels[i][j] = QLabel('a')
+                grid.addWidget(self.labels[i][j],i,j)
+        self.labels[0][0].setText("asd")
+
+>>>>>>> 8e2f43dbd0f6f189f7439cc35277106f997df3fc
 
         # 컨트롤 레이아웃 박스
         self.vbox = QVBoxLayout()
